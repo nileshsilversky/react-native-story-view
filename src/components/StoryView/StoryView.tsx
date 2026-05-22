@@ -83,6 +83,9 @@ const StoryView = (props: StoryViewProps) => {
           imgSource={{ uri: source.url ?? '' }}
           thumbnailSource={{ uri: source.url ?? '' }}
           onImageLoaded={props.onImageLoaded}
+            props={{
+            resizeMode: 'cover',
+          }}
         />
       ) : (
         isCurrentIndex && (
@@ -91,7 +94,7 @@ const StoryView = (props: StoryViewProps) => {
               ref={videoRef}
               resizeMode="contain"
               paused={props.pause || loading}
-              source={videoSource}
+              source={ {uri: source?.url! }}
               onEnd={props?.onVideoEnd}
               onError={(_error: any) => {
                 setLoading(false);
