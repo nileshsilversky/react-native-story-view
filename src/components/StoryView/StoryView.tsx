@@ -14,7 +14,7 @@ const StoryView = (props: StoryViewProps) => {
   const [buffering, setBuffering] = useState(true);
   const source = props?.stories?.[props?.progressIndex];
   const videoRef = useRef<Video>(null);
-  const videoData = useRef<OnLoadData>();
+  const videoData = useRef<OnLoadData | null>(null);
   const isCurrentIndex = props?.index === props?.storyIndex;
 
   useEffect(() => {
@@ -32,7 +32,9 @@ const StoryView = (props: StoryViewProps) => {
       if (videoData.current === undefined) return;
       setLoading(false);
       setBuffering(false);
-      props?.onVideoLoaded?.(videoData.current);
+      if (videoData.current) {
+        props?.onVideoLoaded?.(videoData.current);
+      }
     }
   };
 
