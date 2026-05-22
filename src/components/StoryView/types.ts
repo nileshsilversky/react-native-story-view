@@ -110,7 +110,7 @@ export interface StoryViewProps {
 
 export interface StoryViewProps extends CommonProps {
   progressIndex: number;
-  viewRef?: RefObject<View>;
+  viewRef?: RefObject<View | null>;
 }
 
 export interface ProgressiveImageProps {
@@ -141,13 +141,13 @@ export interface StoryContainerBaseProps extends CommonProps {
   userStoryIndex?: number | undefined;
   storyIndex?: number | undefined;
   isShowReply?: boolean | undefined;
-  renderHeaderComponent?: (callback: CallbackProps) => JSX.Element;
-  renderFooterComponent?: (callback: CallbackProps) => JSX.Element;
-  renderIndicatorComponent?: () => JSX.Element;
+  renderHeaderComponent?: (callback: CallbackProps) => React.ReactElement;
+  renderFooterComponent?: (callback: CallbackProps) => React.ReactElement;
+  renderIndicatorComponent?: () => React.ReactElement;
   userProfile?: UserProps | undefined;
   footerView?: FooterViewProps | undefined;
   onComplete?: (viewedStories?: Array<boolean[]>) => void;
-  renderCustomView?: (callback: CallbackProps) => JSX.Element;
+  renderCustomView?: (callback: CallbackProps) => React.ReactElement;
   backgroundColor?: string;
   style?: ViewStyle;
   progressIndex?: number | undefined;
@@ -168,13 +168,13 @@ export interface StoryContainerBaseProps extends CommonProps {
   customViewStyle?: ViewStyle;
   headerStyle?: ViewStyle;
   footerStyle?: ViewStyle;
-  renderOverlayView?: (item: StoryType) => JSX.Element;
+  renderOverlayView?: (item: StoryType) => React.ReactElement;
   overlayViewPostion?: 'top' | 'bottom' | 'middle';
 }
 
 export interface OverlayViewStoryContainerProps
   extends StoryContainerBaseProps {
-  renderOverlayView: (item: StoryType) => JSX.Element;
+  renderOverlayView: (item: StoryType) => React.ReactElement;
   overlayViewPostion: 'top' | 'bottom' | 'middle';
 }
 
