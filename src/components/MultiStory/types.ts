@@ -20,7 +20,7 @@ export interface MultiStoryBaseProps extends Partial<FlatListProps<any>> {
 }
 
 export interface OverlayViewMultiStoryProps extends MultiStoryBaseProps {
-  renderOverlayView: (item: StoryType) => JSX.Element;
+  renderOverlayView: (item: StoryType) => React.ReactElement;
   overlayViewPostion: 'top' | 'bottom' | 'middle';
 }
 
