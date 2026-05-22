@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   progressiveImageContainer: {
-    backgroundColor: 'red',
+    backgroundColor: 'transparent',
   },
   parentView: {
     flex: 1,
