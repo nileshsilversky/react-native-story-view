@@ -83,7 +83,7 @@ const StoryView = (props: StoryViewProps) => {
           imgSource={{ uri: source.url ?? '' }}
           thumbnailSource={{ uri: source.url ?? '' }}
           onImageLoaded={props.onImageLoaded}
-            props={{
+          props={{
             resizeMode: 'cover',
           }}
         />
@@ -94,7 +94,11 @@ const StoryView = (props: StoryViewProps) => {
               ref={videoRef}
               resizeMode="contain"
               paused={props.pause || loading}
-              source={ {uri: source?.url! }}
+              source={{
+                uri: convertToProxyURL({
+                  url: source?.url!,
+                }),
+              }}
               onEnd={props?.onVideoEnd}
               onError={(_error: any) => {
                 setLoading(false);
