@@ -45,7 +45,7 @@ export interface MultiStoryListItemProps
   storyLength: number;
   gestureHandler?: (e: GestureHandlerEvent<any>) => void;
   isInitialStory?: boolean;
-  renderOverlayView?: (item: StoryType) => JSX.Element;
+  renderOverlayView?: (item: StoryType) => React.ReactElement;
   overlayViewPostion?: 'top' | 'bottom' | 'middle';
 }
 
