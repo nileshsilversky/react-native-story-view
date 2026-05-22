@@ -50,6 +50,9 @@ const StoryView = (props: StoryViewProps) => {
           imgSource={{ uri: source.url ?? '' }}
           thumbnailSource={{ uri: source.url ?? '' }}
           onImageLoaded={props.onImageLoaded}
+          props={{
+            resizeMode: 'cover',
+          }}
         />
       ) : (
         isCurrentIndex && (
