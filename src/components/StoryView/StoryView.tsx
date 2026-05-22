@@ -53,7 +53,7 @@ const StoryView = (props: StoryViewProps) => {
           thumbnailSource={{ uri: source.url ?? '' }}
           onImageLoaded={props.onImageLoaded}
           props={{
-            resizeMode: 'cover',
+            resizeMode: 'repeat',
           }}
         />
       ) : (
