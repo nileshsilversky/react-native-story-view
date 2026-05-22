@@ -31,6 +31,7 @@ const ProgressiveImage = (props: ProgressiveImageProps) => {
         resizeMode="cover"
         style={[styles.imageOverlay, viewStyle, { opacity: thumbnailAnimated }]}
         onLoad={handleThumbnailLoad}
+        resizeMode="cover"
       />
       <Animated.Image
         {...reset}
