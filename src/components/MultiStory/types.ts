@@ -15,7 +15,7 @@ export interface MultiStoryBaseProps extends Partial<FlatListProps<any>> {
   viewedStories?: Array<boolean[]>;
   storyContainerProps?: Omit<StoryContainerProps, 'stories'>;
   transitionMode?: TransitionMode;
-  renderOverlayView?: (item: StoryType) => JSX.Element;
+  renderOverlayView?: (item: StoryType) => React.ReactElement;
   overlayViewPostion?: 'top' | 'bottom' | 'middle';
 }
 
